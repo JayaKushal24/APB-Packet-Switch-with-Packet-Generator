@@ -10,10 +10,10 @@ class apb_agent extends uvm_agent;
     endfunction
 
     virtual function void build_phase(uvm_phase phase);
-        uvm_active_passive_enum active_mode;
+        uvm_active_passive_enum mode;
         super.build_phase(phase);
-        if (uvm_config_db#(uvm_active_passive_enum)::get(this, "", "is_active", active_mode)) begin
-            is_active=active_mode;
+        if (uvm_config_db#(uvm_active_passive_enum)::get(this, "", "is_active",mode)) begin
+            is_active=mode;
         end
         if (get_is_active() == UVM_ACTIVE) begin
             sequencer = apb_sequencer::type_id::create("sequencer", this);

@@ -40,12 +40,12 @@ class reg_switch_status extends uvm_reg;
         err_pending.configure(.parent(this),.size(1),.lsb_pos(9),.access("RO"),.volatile(1),.has_reset(1),.reset(1'b0),.is_rand(0),.individually_accessible(1));
     //Reserved
         reserved_1=uvm_reg_field::type_id::create("reserved_1");
-        reserved_1.configure(.parent(this),.size(6),.lsb_pos(10),.access("RAZ"),.volatile(0),.has_reset(1),.reset(6'h00),.is_rand(0),.individually_accessible(1));
+        reserved_1.configure(.parent(this),.size(6),.lsb_pos(10),.access("RO"),.volatile(0),.has_reset(1),.reset(6'h00),.is_rand(0),.individually_accessible(1));
     //Generator state: 0 IDLE, 1 SEND, 2 GAP, 3 DONE.
         gen_fsm=uvm_reg_field::type_id::create("gen_fsm");
         gen_fsm.configure(.parent(this),.size(2),.lsb_pos(16),.access("RO"),.volatile(1),.has_reset(1),.reset(2'b00),.is_rand(0),.individually_accessible(1));
     //Reserved
         reserved_2=uvm_reg_field::type_id::create("reserved_2");
-        reserved_2.configure(.parent(this),.size(14),.lsb_pos(18),.access("RAZ"),.volatile(0),.has_reset(1),.reset(14'h0000),.is_rand(0),.individually_accessible(1));
+        reserved_2.configure(.parent(this),.size(14),.lsb_pos(18),.access("RO"),.volatile(0),.has_reset(1),.reset(14'h0000),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass

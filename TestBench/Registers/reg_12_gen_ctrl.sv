@@ -25,6 +25,6 @@ class reg_gen_ctrl extends uvm_reg;
         continuous.configure(.parent(this),.size(1),.lsb_pos(3),.access("RW"),.volatile(0),.has_reset(1),.reset(1'b0),.is_rand(0),.individually_accessible(1));
 
         reserved=uvm_reg_field::type_id::create("reserved");
-        reserved.configure(.parent(this),.size(28),.lsb_pos(4),.access("RAZ"),.volatile(0),.has_reset(1),.reset(28'h0000000),.is_rand(0),.individually_accessible(1));
+        reserved.configure(.parent(this),.size(28),.lsb_pos(4),.access("RO"),.volatile(0),.has_reset(1),.reset(28'h0000000),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass

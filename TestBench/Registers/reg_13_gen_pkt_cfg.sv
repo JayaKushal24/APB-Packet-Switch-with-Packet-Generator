@@ -20,7 +20,7 @@ class reg_gen_pkt_cfg extends uvm_reg;
         src_port.configure(.parent(this),.size(2),.lsb_pos(2),.access("RW"),.volatile(0),.has_reset(1),.reset(2'b00),.is_rand(0),.individually_accessible(1));
 
         reserved_1=uvm_reg_field::type_id::create("reserved_1");
-        reserved_1.configure(.parent(this),.size(4),.lsb_pos(4),.access("RAZ"),.volatile(0),.has_reset(1),.reset(4'h0),.is_rand(0),.individually_accessible(1));
+        reserved_1.configure(.parent(this),.size(4),.lsb_pos(4),.access("RO"),.volatile(0),.has_reset(1),.reset(4'h0),.is_rand(0),.individually_accessible(1));
 
         length=uvm_reg_field::type_id::create("length");
         length.configure(.parent(this),.size(8),.lsb_pos(8),.access("RW"),.volatile(0),.has_reset(1),.reset(8'h04),.is_rand(0),.individually_accessible(1));
@@ -29,6 +29,6 @@ class reg_gen_pkt_cfg extends uvm_reg;
         seed.configure(.parent(this),.size(8),.lsb_pos(16),.access("RW"),.volatile(0),.has_reset(1),.reset(8'h00),.is_rand(0),.individually_accessible(1));
 
         reserved_2=uvm_reg_field::type_id::create("reserved_2");
-        reserved_2.configure(.parent(this),.size(8),.lsb_pos(24),.access("RAZ"),.volatile(0),.has_reset(1),.reset(8'h00),.is_rand(0),.individually_accessible(1));
+        reserved_2.configure(.parent(this),.size(8),.lsb_pos(24),.access("RO"),.volatile(0),.has_reset(1),.reset(8'h00),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass

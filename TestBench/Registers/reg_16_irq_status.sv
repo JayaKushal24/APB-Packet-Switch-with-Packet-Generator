@@ -42,6 +42,6 @@ class reg_irq_status extends uvm_reg;
         sw_event.configure(.parent(this),.size(1),.lsb_pos(7),.access("W1C"),.volatile(1),.has_reset(1),.reset(1'b0),.is_rand(0),.individually_accessible(1));
 
         reserved=uvm_reg_field::type_id::create("reserved");
-        reserved.configure(.parent(this),.size(24),.lsb_pos(8),.access("RAZ"),.volatile(0),.has_reset(1),.reset(24'h000000),.is_rand(0),.individually_accessible(1));
+        reserved.configure(.parent(this),.size(24),.lsb_pos(8),.access("RO"),.volatile(0),.has_reset(1),.reset(24'h000000),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass

@@ -13,7 +13,7 @@ class reg_stat_rx extends uvm_reg;
         rx_packets.configure(.parent(this),.size(16),.lsb_pos(0),.access("RO"),.volatile(1),.has_reset(1),.reset(16'h0000),.is_rand(0),.individually_accessible(1));
 
         reserved=uvm_reg_field::type_id::create("reserved");
-        reserved.configure(.parent(this),.size(16),.lsb_pos(16),.access("RAZ"),.volatile(0),.has_reset(1),.reset(16'h0000),.is_rand(0),.individually_accessible(1));
+        reserved.configure(.parent(this),.size(16),.lsb_pos(16),.access("RO"),.volatile(0),.has_reset(1),.reset(16'h0000),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass
 

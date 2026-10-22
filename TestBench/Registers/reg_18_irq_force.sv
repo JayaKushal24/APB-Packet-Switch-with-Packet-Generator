@@ -13,6 +13,6 @@ class reg_irq_force extends uvm_reg;
         force_.configure(.parent(this),.size(8),.lsb_pos(0),.access("WO"),.volatile(0),.has_reset(1),.reset(8'h00),.is_rand(0),.individually_accessible(1));
 
         reserved=uvm_reg_field::type_id::create("reserved");
-        reserved.configure(.parent(this),.size(24),.lsb_pos(8),.access("RAZ"),.volatile(0),.has_reset(1),.reset(24'h000000),.is_rand(0),.individually_accessible(1));
+        reserved.configure(.parent(this),.size(24),.lsb_pos(8),.access("RO"),.volatile(0),.has_reset(1),.reset(24'h000000),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass

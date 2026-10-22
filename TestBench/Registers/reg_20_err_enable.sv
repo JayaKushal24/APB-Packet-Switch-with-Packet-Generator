@@ -41,6 +41,6 @@ class reg_err_enable extends uvm_reg;
         injected_en.configure(.parent(this),.size(1),.lsb_pos(7),.access("RW"),.volatile(0),.has_reset(1),.reset(1'b0),.is_rand(0),.individually_accessible(1));
 
         reserved=uvm_reg_field::type_id::create("reserved");
-        reserved.configure(.parent(this),.size(24),.lsb_pos(8),.access("RAZ"),.volatile(0),.has_reset(1),.reset(24'h000000),.is_rand(0),.individually_accessible(1));
+        reserved.configure(.parent(this),.size(24),.lsb_pos(8),.access("RO"),.volatile(0),.has_reset(1),.reset(24'h000000),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass

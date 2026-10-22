@@ -19,12 +19,12 @@ class reg_switch_ctrl extends uvm_reg;
         stat_clear.configure(.parent(this),.size(1),.lsb_pos(1),.access("WO"),.volatile(0),.has_reset(1),.reset(1'b0),.is_rand(0),.individually_accessible(1));
 
         reserved_1=uvm_reg_field::type_id::create("reserved_1");
-        reserved_1.configure(.parent(this),.size(1),.lsb_pos(2),.access("RAZ"),.volatile(0),.has_reset(1),.reset(1'b0),.is_rand(0),.individually_accessible(1));
+        reserved_1.configure(.parent(this),.size(1),.lsb_pos(2),.access("RO"),.volatile(0),.has_reset(1),.reset(1'b0),.is_rand(0),.individually_accessible(1));
 
         irq_global_en=uvm_reg_field::type_id::create("irq_global_en");
         irq_global_en.configure(.parent(this),.size(1),.lsb_pos(3),.access("RW"),.volatile(0),.has_reset(1),.reset(1'b0),.is_rand(0),.individually_accessible(1));
 
         reserved_2=uvm_reg_field::type_id::create("reserved_2");
-        reserved_2.configure(.parent(this),.size(28),.lsb_pos(4),.access("RAZ"),.volatile(0),.has_reset(1),.reset(28'h0000000),.is_rand(0),.individually_accessible(1));
+        reserved_2.configure(.parent(this),.size(28),.lsb_pos(4),.access("RO"),.volatile(0),.has_reset(1),.reset(28'h0000000),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass

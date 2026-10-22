@@ -23,12 +23,12 @@ class reg_gen_status extends uvm_reg;
         fsm.configure(.parent(this),.size(2),.lsb_pos(2),.access("RO"),.volatile(1),.has_reset(1),.reset(2'b00),.is_rand(0),.individually_accessible(1));
 
         reserved_1=uvm_reg_field::type_id::create("reserved_1");
-        reserved_1.configure(.parent(this),.size(4),.lsb_pos(4),.access("RAZ"),.volatile(0),.has_reset(1),.reset(4'h0),.is_rand(0),.individually_accessible(1));
+        reserved_1.configure(.parent(this),.size(4),.lsb_pos(4),.access("RO"),.volatile(0),.has_reset(1),.reset(4'h0),.is_rand(0),.individually_accessible(1));
 
         remaining=uvm_reg_field::type_id::create("remaining");
         remaining.configure(.parent(this),.size(16),.lsb_pos(8),.access("RO"),.volatile(1),.has_reset(1),.reset(16'h0000),.is_rand(0),.individually_accessible(1));
 
         reserved_2=uvm_reg_field::type_id::create("reserved_2");
-        reserved_2.configure(.parent(this),.size(8),.lsb_pos(24),.access("RAZ"),.volatile(0),.has_reset(1),.reset(8'h00),.is_rand(0),.individually_accessible(1));
+        reserved_2.configure(.parent(this),.size(8),.lsb_pos(24),.access("RO"),.volatile(0),.has_reset(1),.reset(8'h00),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass

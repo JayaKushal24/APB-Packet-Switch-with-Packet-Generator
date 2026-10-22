@@ -21,6 +21,6 @@ class reg_version extends uvm_reg;
         major.configure(.parent(this),.size(8),.lsb_pos(16),.access("RO"),.volatile(0),.has_reset(1),.reset(8'h01),.is_rand(0),.individually_accessible(1));
 
         reserved=uvm_reg_field::type_id::create("reserved");
-        reserved.configure(.parent(this),.size(8),.lsb_pos(24),.access("RAZ"),.volatile(0),.has_reset(1),.reset(8'h00),.is_rand(0),.individually_accessible(1));
+        reserved.configure(.parent(this),.size(8),.lsb_pos(24),.access("RO"),.volatile(0),.has_reset(1),.reset(8'h00),.is_rand(0),.individually_accessible(1));
     endfunction
 endclass

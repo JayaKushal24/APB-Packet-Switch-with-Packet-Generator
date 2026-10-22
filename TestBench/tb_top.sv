@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 import uvm_pkg::*;
+import tb_pkg::*; // Import master testbench package
 `include "uvm_macros.svh"
-
 module tb_top;
   logic pclk;
   logic presetn;

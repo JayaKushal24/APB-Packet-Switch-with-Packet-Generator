@@ -1,8 +1,8 @@
-import uvm_pkg::*;
+//import uvm_pkg::*;
 `include "uvm_macros.svh"
 
-import package_ral_pkt::*;
-import package_ral_seq::*;
+//import package_ral_pkt::*;
+//import package_ral_seq::*;
 
 class reg_test extends uvm_test;
   `uvm_component_utils(reg_test)

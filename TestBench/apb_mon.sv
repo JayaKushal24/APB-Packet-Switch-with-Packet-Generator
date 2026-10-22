@@ -3,20 +3,20 @@ class apb_monitor extends uvm_component;
     virtual apb_if vif;
     uvm_analysis_port #(apb_seq_item) ap;
     function new(string name="apb_monitor",uvm_component parent=null);
-        super.new(name, parent);
-        ap=new("ap", this);
+        super.new(name,parent);
+        ap=new("ap",this);
     endfunction
 
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-        if (!uvm_config_db#(virtual apb_if)::get(this, "", "vif", vif)) begin
-            `uvm_fatal("MON_NO_VIF", "Virtual interface 'vif' not found in uvm_config_db!")
+        if (!uvm_config_db#(virtual apb_if)::get(this,"","vif",vif)) begin
+            `uvm_fatal("MON_NO_VIF", "vif not found")
         end
     endfunction
 
     virtual task run_phase(uvm_phase phase);
         apb_seq_item item;
-        wait (vif.presetn === 1'b1);
+        wait (vif.presetn===1'b1);
         forever begin
             @(posedge vif.pclk);
             if (vif.psel===1'b1 && vif.penable===1'b1 && vif.pready===1'b1) begin

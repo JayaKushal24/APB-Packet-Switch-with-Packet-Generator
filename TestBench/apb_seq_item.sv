@@ -9,12 +9,10 @@ class apb_seq_item extends uvm_sequence_item;
     logic   pready;
     logic   pslverr;
     logic   irq;
-    //address alignment constraint (32-bit word aligned)
+
     constraint c_addr_aligned {
         soft paddr[1:0] == 2'b00;
     }
-
-    //address range constraint (0x00 to 0x60 for valid CSR range)
     constraint c_valid_csr_range {
         soft paddr <= 16'h0060;
     }

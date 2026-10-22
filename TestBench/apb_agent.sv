@@ -12,19 +12,18 @@ class apb_agent extends uvm_agent;
     virtual function void build_phase(uvm_phase phase);
         uvm_active_passive_enum mode;
         super.build_phase(phase);
-        if (uvm_config_db#(uvm_active_passive_enum)::get(this, "", "is_active",mode)) begin
+        if (uvm_config_db#(uvm_active_passive_enum)::get(this, "","is_active",mode))
             is_active=mode;
-        end
         if (get_is_active() == UVM_ACTIVE) begin
-            sequencer = apb_sequencer::type_id::create("sequencer", this);
-            driver    = apb_driver::type_id::create("driver", this);
+            sequencer=apb_sequencer::type_id::create("sequencer", this);
+            driver=apb_driver::type_id::create("driver", this);
         end
-        monitor = apb_monitor::type_id::create("monitor", this);
+        monitor=apb_monitor::type_id::create("monitor", this);
     endfunction
 
     virtual function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
-        if (get_is_active() == UVM_ACTIVE) begin
+        if (get_is_active()==UVM_ACTIVE) begin
             driver.seq_item_port.connect(sequencer.seq_item_export);
         end
     endfunction

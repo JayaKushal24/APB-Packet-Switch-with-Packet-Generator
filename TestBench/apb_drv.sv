@@ -14,7 +14,7 @@ class apb_driver extends uvm_driver #(apb_seq_item);
     endfunction
 
     virtual task run_phase(uvm_phase phase);
-        wait(vif.drv_cb.presetn===1'b0);
+        wait(vif.presetn===1'b0);
         vif.drv_cb.psel<=1'b0;
         vif.drv_cb.penable<=1'b0;
         vif.drv_cb.pwrite<=1'b0;

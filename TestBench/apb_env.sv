@@ -1,11 +1,11 @@
-class tb_env extends uvm_env;
-    `uvm_component_utils(tb_env)
+class apb_env extends uvm_env;
+    `uvm_component_utils(apb_env)
     pkt_reg_block regmodel;
     apb_reg_adapter adapter;
     uvm_reg_predictor #(apb_seq_item) predictor; // Built-in UVM Predictor
     apb_agent apb_agnt;
 
-    function new(string name="tb_env", uvm_component parent=null);
+    function new(string name="apb_env", uvm_component parent=null);
         super.new(name, parent);
     endfunction
 

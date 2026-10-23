@@ -28,6 +28,6 @@ module tb_top;
 
   initial begin
     uvm_config_db#(virtual apb_if)::set(null,"*","vif",vif);
-    run_test("reg_test");
+    run_test("ral_backdoor_test");
   end
 endmodule

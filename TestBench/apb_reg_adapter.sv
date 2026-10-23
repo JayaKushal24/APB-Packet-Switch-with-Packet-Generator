@@ -22,5 +22,9 @@ class apb_reg_adapter extends uvm_reg_adapter;
         rw.addr=tr.paddr;
         rw.data=tr.pwrite?tr.pwdata:tr.prdata;
         rw.status=tr.pslverr?UVM_NOT_OK:UVM_IS_OK;
+       `uvm_info("BUS_2_REG", $sformatf("PADDR: 0x%04X, PWRITE:%0b | PRDATA: 0x%08X, PSLVERR: %0b, PREADY: %0b",tr.paddr,tr.pwrite,tr.prdata,tr.pslverr,tr.pready),UVM_MEDIUM)
+    
+    
+    
     endfunction
 endclass

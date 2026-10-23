@@ -43,7 +43,10 @@ class apb_driver extends uvm_driver #(apb_seq_item);
         do begin
             @(posedge vif.pclk);
         end while (vif.drv_cb.pready===1'b0);
-
+        //@(vif.drv_cb);
+	if(!req.pwrite)
+	    req.prdata=vif.drv_cb.prdata; 
+	req.pslverr=vif.drv_cb.pslverr;
         vif.drv_cb.psel<=1'b0;
         vif.drv_cb.penable<=1'b0;
 endtask

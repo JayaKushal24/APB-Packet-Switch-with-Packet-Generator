@@ -17,5 +17,6 @@ package tb_pkg;
   // Test classes
   `include "reg_test.sv" 
   `include "ral_backdoor_test.sv" 
-
+  `include "pkt_reg_tests.sv"  
+  `include "pkt_backdoor_test.sv"  
 endpackage

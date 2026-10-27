@@ -31,3 +31,5 @@ compile:
 
 clean:
 	rm -rf simv simv.daidir csrc *.log *.key *.h
+	clear
+
